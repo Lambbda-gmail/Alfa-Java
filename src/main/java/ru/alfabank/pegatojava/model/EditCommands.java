@@ -25,15 +25,17 @@ public enum EditCommands {
 
     public static EditCommands find(String input) {
         for (EditCommands command : EditCommands.values())
-            if (command.getCommand().equals(input))
+            if (command.getCommand().equals(input)) {
                 return command;
+            }
         return DEFAULT;
     }
 
     public static void list() {
         for (EditCommands command : EditCommands.values()) {
-            if (command != DEFAULT)
+            if (command != DEFAULT) {
                 System.out.println(command.getCommand() + " - " + command.getDescription());
+            }
         }
     }
 }

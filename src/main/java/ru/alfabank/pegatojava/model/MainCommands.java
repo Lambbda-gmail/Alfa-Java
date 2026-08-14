@@ -28,15 +28,17 @@ public enum MainCommands {
 
     public static MainCommands find(String input) {
         for (MainCommands command : MainCommands.values())
-            if (command.getCommand().equals(input))
+            if (command.getCommand().equals(input)) {
                 return command;
+            }
         return DEFAULT;
     }
 
     public static void list() {
         for (MainCommands command : MainCommands.values()) {
-            if (command != DEFAULT && command != CANCEL)
+            if (command != DEFAULT && command != CANCEL) {
                 System.out.println(command.getCommand() + " - " + command.getDescription());
+            }
         }
     }
 }

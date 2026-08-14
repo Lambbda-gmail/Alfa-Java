@@ -3,6 +3,7 @@ package test.java.ru.alfabank.pegatojava.app;
 import main.java.ru.alfabank.pegatojava.app.TaskManager;
 import main.java.ru.alfabank.pegatojava.model.Task;
 import org.junit.jupiter.api.*;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,7 @@ public class TaskManagerTest {
                 TITLE.getCommand(),
                 CANCEL.getCommand(),
                 DESCRIPTION.getCommand(),
-                "Новое описание "+ CANCEL.getCommand(),
+                "Новое описание " + CANCEL.getCommand(),
                 "Неправильная команда",
                 CONTINUE.getCommand(),
                 CANCEL.getCommand()
@@ -146,7 +147,7 @@ public class TaskManagerTest {
     ///////// Утилиты /////////
 
     // Построчный ввод данных для теста
-    private void setInput(String ... input) {
+    private void setInput(String... input) {
         String joined = "";
         for (String line : input) {
             joined += line + System.lineSeparator();
@@ -158,9 +159,10 @@ public class TaskManagerTest {
     // Получение указанной строки вывода; если с минусом, ищем с конца
     private String getOutput(int line) {
         String[] split = outContent.toString().split(System.lineSeparator());
-        if (line < 0)
+        if (line < 0) {
             return split[split.length + line].trim();
-        else
+        } else {
             return split[line].trim();
+        }
     }
 }
