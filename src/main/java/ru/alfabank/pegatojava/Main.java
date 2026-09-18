@@ -1,23 +1,25 @@
 package main.java.ru.alfabank.pegatojava;
 
-import main.java.ru.alfabank.pegatojava.app.TaskManager;
-import main.java.ru.alfabank.pegatojava.model.MainCommands;
-import main.java.ru.alfabank.pegatojava.model.Task;
+import main.java.ru.alfabank.pegatojava.tasks.TaskManager;
+import main.java.ru.alfabank.pegatojava.tasks.TaskColumns;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static final List<String> TASK_COLUMNS = List.of(Arrays.toString(TaskColumns.values()));
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        TaskManager taskManager = new TaskManager(sc, new ArrayList<Task>());
+        TaskManager taskManager = new TaskManager(sc);
 
         System.out.println("Добро пожаловать! Выберите действие:");
         MainCommands.list();
 
         boolean exit = false;
-        while(!exit) {
+        while (!exit) {
             var input = MainCommands.find(sc.nextLine());
             switch (input) {
                 case LIST:
