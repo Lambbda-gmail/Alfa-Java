@@ -1,4 +1,4 @@
-package main.java.ru.alfabank.pegatojava.model;
+package main.java.ru.alfabank.pegatojava;
 
 public enum MainCommands {
     LIST("1", "Просмотреть все задачи"),
